@@ -50,8 +50,8 @@ public class DrumTest {
     }
 
     @Test
-    public void hasMarkup(){
-        assertEquals(130.00, drums.markup(), 0.01);
+    public void hasprofit(){
+        assertEquals(130.00, drums.getProfit(), 0.01);
     }
 
 

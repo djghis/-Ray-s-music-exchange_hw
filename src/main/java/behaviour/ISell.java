@@ -3,6 +3,13 @@ package behaviour;
 public interface ISell {
 
 
-    double markup();
+    double getProfit();
+
+    double markUpPercentage();
+
+
+
+
+
 
 }

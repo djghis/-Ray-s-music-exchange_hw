@@ -12,11 +12,16 @@ public class PianoTest {
 
     @Before
     public void before(){
-        piano = new Piano("grand", pianoStyle.ACCOUSTIC );
+        piano = new Piano("grand", pianoStyle.ACCOUSTIC, "Custom", "wood", "me", 100, 150 );
     }
 
     @Test
     public void hasPlay(){
         assertEquals("ding ding", piano.play());
+    }
+
+    @Test
+    public void hasMarkupPercentage(){
+        assertEquals(50, piano.markUpPercentage(), 0.01);
     }
 }

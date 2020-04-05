@@ -53,7 +53,12 @@ public class Drums extends Instrument implements IPLay, ISell {
         return "Boom Boom Boom ting";
     }
 
-    public double markup() {
+
+    public double getProfit() {
         return this.getSellingPrice() - this.getBuyingPrice();
+    }
+
+    public double markUpPercentage() {
+        return (this.getSellingPrice() - this.getBuyingPrice()) / this.getBuyingPrice() * 100 ;
     }
 }
