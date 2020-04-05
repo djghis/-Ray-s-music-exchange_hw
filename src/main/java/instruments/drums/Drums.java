@@ -1,18 +1,19 @@
 package instruments.drums;
 
 import behaviour.IPLay;
+import behaviour.ISell;
 import instruments.Instrument;
 
 
-public class Drums extends Instrument implements IPLay {
+public class Drums extends Instrument implements IPLay, ISell {
 
     private String model;
     private int numOfDrums;
     private int numOfBassDrums;
     private int numOfCymbals;
 
-    public Drums(String model, int numOfDrums, int numOfBassDrums, int numOfCymbals, String make, String color, String owner){
-        super(make, color);
+    public Drums(String model, int numOfDrums, int numOfBassDrums, int numOfCymbals, String make, String color, String owner, double buyingPrice, double sellingPrice){
+        super(make, color, buyingPrice, sellingPrice);
         this.model = model;
         this.numOfDrums = numOfDrums;
         this.numOfBassDrums = numOfBassDrums;
@@ -52,4 +53,7 @@ public class Drums extends Instrument implements IPLay {
         return "Boom Boom Boom ting";
     }
 
+    public double markup() {
+        return this.getSellingPrice() - this.getBuyingPrice();
+    }
 }

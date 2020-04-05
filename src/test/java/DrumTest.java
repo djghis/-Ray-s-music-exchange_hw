@@ -10,7 +10,7 @@ public class DrumTest {
 
     @Before
     public void before(){
-        drums = new Drums("XC34", 3, 1, 2, "Yamaha", "classic","");
+        drums = new Drums("XC34", 3, 1, 2, "Yamaha", "classic","", 120.00, 250.00);
     }
 
     @Test
@@ -47,6 +47,11 @@ public class DrumTest {
     public void canChangeOwner(){
         drums.changeOwner("Zelda");
         assertEquals("Zelda", drums.getOwner());
+    }
+
+    @Test
+    public void hasMarkup(){
+        assertEquals(130.00, drums.markup(), 0.01);
     }
 
 
