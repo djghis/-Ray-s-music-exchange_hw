@@ -1,4 +1,4 @@
-package pianos;
+package instruments.pianos;
 
 import behaviour.IPLay;
 import behaviour.PianoStyle;

@@ -1,4 +1,4 @@
-package guitars;
+package instruments.guitars;
 
 import behaviour.IPLay;
 

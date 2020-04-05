@@ -1,7 +1,7 @@
 import behaviour.PianoStyle;
 import org.junit.Before;
 import org.junit.Test;
-import pianos.Piano;
+import instruments.pianos.Piano;
 
 import static org.junit.Assert.assertEquals;
 

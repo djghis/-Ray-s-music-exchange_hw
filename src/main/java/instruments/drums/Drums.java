@@ -1,17 +1,18 @@
-package drums;
+package instruments.drums;
 
 import behaviour.IPLay;
+import instruments.Instrument;
 
-import java.awt.image.ImageProducer;
 
-public class Drums implements IPLay {
+public class Drums extends Instrument implements IPLay {
 
     private String model;
     private int numOfDrums;
     private int numOfBassDrums;
     private int numOfCymbals;
 
-    public Drums(String model, int numOfDrums, int numOfBassDrums, int numOfCymbals){
+    public Drums(String model, int numOfDrums, int numOfBassDrums, int numOfCymbals, String make, String color, String owner){
+        super(make, color);
         this.model = model;
         this.numOfDrums = numOfDrums;
         this.numOfBassDrums = numOfBassDrums;
@@ -50,4 +51,5 @@ public class Drums implements IPLay {
     public String play() {
         return "Boom Boom Boom ting";
     }
+
 }

@@ -1,4 +1,4 @@
-import drums.Drums;
+import instruments.drums.Drums;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,12 +10,12 @@ public class DrumTest {
 
     @Before
     public void before(){
-        drums = new Drums("Yamaha", 3, 1, 2);
+        drums = new Drums("XC34", 3, 1, 2, "Yamaha", "classic","");
     }
 
     @Test
     public void hasModel(){
-        assertEquals("Yamaha", drums.getModel());
+        assertEquals("XC34", drums.getModel());
     }
 
     @Test
@@ -36,6 +36,17 @@ public class DrumTest {
     @Test
     public void hasPlayMethod(){
         assertEquals("Boom Boom Boom ting", drums.play());
+    }
+
+    @Test
+    public void hasdefaultShopOwner(){
+        assertEquals("Shop", drums.getOwner());
+    }
+
+    @Test
+    public void canChangeOwner(){
+        drums.changeOwner("Zelda");
+        assertEquals("Zelda", drums.getOwner());
     }
 
 
