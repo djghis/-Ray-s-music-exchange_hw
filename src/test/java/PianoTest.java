@@ -12,7 +12,7 @@ public class PianoTest {
 
     @Before
     public void before(){
-        piano = new Piano("grand", pianoStyle.ACCOUSTIC, "Custom", "wood", "me", 100, 150 );
+        piano = new Piano("grand", pianoStyle.ACCOUSTIC, "Custom", "wood", 100, 150 );
     }
 
     @Test

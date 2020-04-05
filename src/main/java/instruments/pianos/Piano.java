@@ -10,7 +10,7 @@ public class Piano extends Instrument implements IPLay, ISell {
     private String Model;
     private PianoStyle pianoStyle;
 
-    public Piano(String model, PianoStyle pianoStyle, String make, String color, String owner, double buyingPrice, double sellingPrice){
+    public Piano(String model, PianoStyle pianoStyle, String make, String color, double buyingPrice, double sellingPrice){
         super(make, color, buyingPrice, sellingPrice);
         this.Model = model;
         this.pianoStyle = pianoStyle;

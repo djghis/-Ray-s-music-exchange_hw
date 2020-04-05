@@ -10,7 +10,7 @@ public class Guitar extends Instrument implements IPLay, ISell {
     private int numOfStrings;
     private int numOfBrokenStrings;
 
-    public Guitar(String model, int numOfStrings, String make, String color, String owner, double buyingPrice, double sellingPrice){
+    public Guitar(String model, int numOfStrings, String make, String color, double buyingPrice, double sellingPrice){
         super(make, color, buyingPrice, sellingPrice);
         this.model = model;
         this.numOfStrings = numOfStrings;

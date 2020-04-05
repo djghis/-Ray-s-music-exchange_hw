@@ -10,7 +10,7 @@ public class DrumTest {
 
     @Before
     public void before(){
-        drums = new Drums("XC34", 3, 1, 2, "Yamaha", "classic","", 120.00, 250.00);
+        drums = new Drums("XC34", 3, 1, 2, "Yamaha", "classic", 120.00, 250.00);
     }
 
     @Test

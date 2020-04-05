@@ -12,7 +12,7 @@ public class Drums extends Instrument implements IPLay, ISell {
     private int numOfBassDrums;
     private int numOfCymbals;
 
-    public Drums(String model, int numOfDrums, int numOfBassDrums, int numOfCymbals, String make, String color, String owner, double buyingPrice, double sellingPrice){
+    public Drums(String model, int numOfDrums, int numOfBassDrums, int numOfCymbals, String make, String color, double buyingPrice, double sellingPrice){
         super(make, color, buyingPrice, sellingPrice);
         this.model = model;
         this.numOfDrums = numOfDrums;
