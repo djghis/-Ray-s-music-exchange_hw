@@ -6,7 +6,6 @@ import org.junit.Test;
 import sparesAndAddons.DrumStick;
 import sparesAndAddons.GuitarString;
 
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -48,15 +47,15 @@ public class ShopTest {
 
     @Test
     public void canRemoveItem(){
-        shop.addToStock(guitar);
-        shop.addToStock(piano);
-        shop.addToStock(piano);
-        System.out.println(shop.getStock());
+        shop.addToStock(guitar, piano, piano);
+//        shop.addToStock(piano);
+//        shop.addToStock(piano);
+        System.out.println("I am line 53 in Shop Test: " + shop.getStock());
         shop.removeFromStock(piano);
-        System.out.println(shop.getStock());
+        System.out.println("I am line 55 in Shop Test: " + shop.getStock());
         assertEquals(2, shop.getStockSize());
         shop.addToStock(guitarString);
-        System.out.println(shop.getStock());
+        System.out.println("I am line 58 in Shop Test: " + shop.getStock());
         assertEquals(3, shop.getStockSize());
     }
 }

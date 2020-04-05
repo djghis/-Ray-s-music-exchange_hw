@@ -26,12 +26,24 @@ public class Shop {
         return this.stock.size();
     }
 
-    public void addToStock(ISell item) {
-        this.stock.add(item);
+//    public void addToStock(ISell item) {
+//        this.stock.add(item);
+//    }
+
+    public void addToStock(ISell ... items) {
+        for(ISell item : items) {
+            this.stock.add(item);
+        }
     }
 
-    public void removeFromStock(ISell item) {
-        this.stock.remove(item);
+//    public void removeFromStock(ISell item) {
+//        this.stock.remove(item);
+//    }
+
+    public void removeFromStock(ISell ... products) {
+        for(ISell product : products) {
+            this.stock.remove(product);
+        }
     }
 
     public double getTill() {
