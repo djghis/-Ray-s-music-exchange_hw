@@ -1,4 +1,5 @@
 import behaviour.ISell;
+import instruments.guitars.Guitar;
 
 import java.util.ArrayList;
 
@@ -8,9 +9,9 @@ public class Shop {
     private ArrayList<ISell> stock;
     private double till;
 
-    public Shop(String name, double till){
+    public Shop(String name, double till) {
         this.name = name;
-        this.stock = new ArrayList<ISell>() ;
+        this.stock = new ArrayList<ISell>();
         this.till = till;
     }
 
@@ -22,7 +23,7 @@ public class Shop {
         return stock;
     }
 
-    public int getStockSize(){
+    public int getStockSize() {
         return this.stock.size();
     }
 
@@ -30,8 +31,8 @@ public class Shop {
 //        this.stock.add(item);
 //    }
 
-    public void addToStock(ISell ... items) {
-        for(ISell item : items) {
+    public void addToStock(ISell... items) {
+        for (ISell item : items) {
             this.stock.add(item);
         }
     }
@@ -40,9 +41,9 @@ public class Shop {
 //        this.stock.remove(item);
 //    }
 
-    public void removeFromStock(ISell ... products) {
-        for(ISell product : products) {
-            this.stock.remove(product);
+    public void removeFromStock(ISell... items) {
+        for (ISell item : items) {
+            this.stock.remove(item);
         }
     }
 
@@ -54,7 +55,24 @@ public class Shop {
         this.till += amount;
     }
 
-    public void removeMoneyFromTill(double amount){
+    public void removeMoneyFromTill(double amount) {
         this.till -= amount;
+    }
+
+    public double potentialProfit() {
+        double potentialProfit = 0;
+        for (ISell item : stock) {
+            potentialProfit += item.getProfit();
+        }
+
+        return potentialProfit;
+    }
+
+    public void sellItem(ISell item) {
+        if (stock.contains(item)) {
+            removeFromStock(item);
+            addMoneyToTill(item.getSellingPrice());
+
+        }
     }
 }

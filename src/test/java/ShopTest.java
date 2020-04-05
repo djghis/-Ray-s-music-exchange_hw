@@ -39,8 +39,8 @@ public class ShopTest {
 
     @Test
     public void canAddISellItem(){
-        shop.addToStock(guitar);
-        shop.addToStock(piano);
+        shop.addToStock(guitar, piano);
+//        shop.addToStock(piano);
         System.out.println(shop.getStock());
         assertEquals(2, shop.getStockSize());
     }
@@ -57,5 +57,38 @@ public class ShopTest {
         shop.addToStock(guitarString);
         System.out.println("I am line 58 in Shop Test: " + shop.getStock());
         assertEquals(3, shop.getStockSize());
+    }
+
+    @Test
+    public void canCalculatePotentialProfit(){
+        shop.addToStock(guitar);
+        shop.addToStock(piano);
+        shop.addToStock(guitarString);
+        shop.addToStock(drumStick);
+        assertEquals(3448.47, shop.potentialProfit(), 0.01 );
+
+    }
+
+    @Test
+    public void canSellIteminStock(){
+        shop.addToStock(guitar);
+        shop.addToStock(piano);
+        shop.addToStock(guitarString);
+        shop.addToStock(drumStick);
+        shop.sellItem(guitar);
+        assertEquals(3, shop.getStockSize());
+        assertEquals(1000, shop.getTill(), 0.0);
+    }
+
+    @Test
+    public void canTSellItemNotInStock(){
+        shop.addToStock(guitar);
+        shop.addToStock(piano);
+        shop.addToStock(guitarString);
+        shop.addToStock(drumStick);
+        shop.sellItem(guitar);
+        shop.sellItem(guitar);
+        assertEquals(3, shop.getStockSize());
+        assertEquals(1000, shop.getTill(), 0.0);
     }
 }

@@ -47,4 +47,6 @@ public class Guitar extends Instrument implements IPLay, ISell {
     public double markUpPercentage() {
         return (this.getSellingPrice() - this.getBuyingPrice()) / this.getBuyingPrice() * 100 ;
     }
+
+
 }
