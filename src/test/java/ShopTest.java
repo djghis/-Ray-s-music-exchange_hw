@@ -70,7 +70,7 @@ public class ShopTest {
     }
 
     @Test
-    public void canSellIteminStock(){
+    public void canSellItemInStock(){
         shop.addToStock(guitar);
         shop.addToStock(piano);
         shop.addToStock(guitarString);
@@ -81,7 +81,7 @@ public class ShopTest {
     }
 
     @Test
-    public void canTSellItemNotInStock(){
+    public void canTSellMoreThanItemsInStock(){
         shop.addToStock(guitar);
         shop.addToStock(piano);
         shop.addToStock(guitarString);
@@ -90,5 +90,17 @@ public class ShopTest {
         shop.sellItem(guitar);
         assertEquals(3, shop.getStockSize());
         assertEquals(1000, shop.getTill(), 0.0);
+    }
+
+    @Test
+    public void canTSellItemsNotInStock(){
+
+        shop.addToStock(piano);
+        shop.addToStock(guitarString);
+        shop.addToStock(drumStick);
+        shop.sellItem(guitar);
+
+        assertEquals(3, shop.getStockSize());
+        assertEquals(500, shop.getTill(), 0.0);
     }
 }
