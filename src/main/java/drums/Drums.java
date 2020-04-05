@@ -1,6 +1,10 @@
 package drums;
 
-public class Drums {
+import behaviour.IPLay;
+
+import java.awt.image.ImageProducer;
+
+public class Drums implements IPLay {
 
     private String model;
     private int numOfDrums;
@@ -41,5 +45,9 @@ public class Drums {
 
     public void setNumOfCymbals(int numOfCymbals) {
         this.numOfCymbals = numOfCymbals;
+    }
+
+    public String play() {
+        return "Boom Boom Boom ting";
     }
 }

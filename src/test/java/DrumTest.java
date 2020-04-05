@@ -33,5 +33,10 @@ public class DrumTest {
         assertEquals(2, drums.getNumOfCymbals());
     }
 
+    @Test
+    public void hasPlayMethod(){
+        assertEquals("Boom Boom Boom ting", drums.play());
+    }
+
 
 }
